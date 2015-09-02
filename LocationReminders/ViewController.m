@@ -46,20 +46,16 @@
 
 -(void)handleLongPressGesture:(UIGestureRecognizer*)sender {
   if (sender.state == UIGestureRecognizerStateEnded) {
-    [self.mapView removeGestureRecognizer:sender];
-  } else {
     CGPoint point = [sender locationInView:self.mapView];
     CLLocationCoordinate2D locationCoordidate = [self.mapView convertPoint:point toCoordinateFromView:self.mapView];
     
     MKPointAnnotation *addDropPin = [[MKPointAnnotation alloc] init];
     addDropPin.coordinate = locationCoordidate;
+    addDropPin.title = @"Dummy";
     [self.mapView addAnnotation:addDropPin];
+  } else {
 
-    
-//    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-//    annotation.coordinate = CLLocationCoordinate2DMake(47.6235, -122.3363);
-//    annotation.title = @"Code Fellows";
-//    [self.mapView addAnnotation:annotation];
+
   }
 }
 
@@ -107,6 +103,11 @@
   if (!pinView) {
     pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"AnnotationView"];
   }
+  pinView.animatesDrop = true;
+  pinView.pinColor = MKPinAnnotationColorGreen;
+  [pinView setCanShowCallout: YES];
+  pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+  
   return pinView;
 }
 

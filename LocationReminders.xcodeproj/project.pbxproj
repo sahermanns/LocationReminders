@@ -427,6 +427,7 @@
 				3E5FFCDD1B950CB100ED0BC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E5FFCDE1B950CB100ED0BC4 /* Build configuration list for PBXNativeTarget "LocationRemindersTests" */ = {
 			isa = XCConfigurationList;
@@ -435,6 +436,7 @@
 				3E5FFCE01B950CB100ED0BC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
