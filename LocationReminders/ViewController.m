@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AddReminderDetailViewController.h"
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
@@ -109,6 +110,24 @@
   pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
   
   return pinView;
+}
+
+#pragma mark - CalloutAccessoryIdentifier
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+  
+   [self performSegueWithIdentifier:@"ShowAddReminderVC" sender:view];
+  
+}
+
+#pragma mark - Prepare for Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MKAnnotationView *)sender {
+    if ([segue.identifier isEqualToString:@"ShowAddReminderVC"]) {
+      AddReminderDetailViewController *destinationViewController = segue.destinationViewController;
+      destinationViewController.annotationCoordinates = sender.annotation.coordinate;
+    
+    } else {
+      NSLog(@"error");
+    }
 }
 
 
