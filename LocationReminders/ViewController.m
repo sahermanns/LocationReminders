@@ -33,6 +33,23 @@
   
   [self.locationManager startUpdatingLocation];
   
+  
+  
+//  PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:47.6235 longitude:-122.3363];
+//  PFObject *place = [[PFObject alloc] initWithClassName:@"Place"];
+//  place[@"location"] = geoPoint;
+//  place[@"name"] = @"Code Fellows";
+//  
+//  [place saveInBackground];
+//  
+//  [place saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//    if (error) {
+//      
+//    } else if (succeeded) {
+//      
+//    }
+//  }];
+  
   UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
   [self.mapView addGestureRecognizer:longPressGesture];
   
