@@ -11,6 +11,8 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <Parse/Parse.h>
+#import "Reminder.h"
+#import "constants.h"
 
 @interface ViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -20,8 +22,15 @@
 
 @implementation ViewController
 
+-(void)dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reminderNotification:) name:kReminderNotification object:nil];
+  
   self.mapView.delegate = self;
   self.mapView.showsUserLocation = true;
   
@@ -34,25 +43,32 @@
   [self.locationManager startUpdatingLocation];
   
   
-  
-//  PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:47.6235 longitude:-122.3363];
-//  PFObject *place = [[PFObject alloc] initWithClassName:@"Place"];
-//  place[@"location"] = geoPoint;
-//  place[@"name"] = @"Code Fellows";
-//  
-//  [place saveInBackground];
-//  
-//  [place saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//    if (error) {
-//      
-//    } else if (succeeded) {
-//      
-//    }
-//  }];
-  
   UILongPressGestureRecognizer *longPressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGesture:)];
   [self.mapView addGestureRecognizer:longPressGesture];
   
+
+}
+
+-(void)reminderNotification:(NSNotification *)notification {
+  NSLog(@"notification fired!");
+  NSDictionary *userInfo = notification.userInfo;
+  if (userInfo) {
+    
+    Reminder *reminder = userInfo[@"NewReminder"];
+    
+    if ([CLLocationManager isMonitoringAvailableForClass:[CLCircularRegion class]]) {
+      
+      CLLocationCoordinate2D location = CLLocationCoordinate2DMake(reminder.coordinate.latitude, reminder.coordinate.longitude);
+      
+      CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:location radius:200 identifier:reminder.locationName];
+      
+      [self.locationManager startMonitoringForRegion:region];
+      
+//      NSArray *regions = [[self.locationManager monitoredRegions] allObjects];
+      
+    }
+    
+  }
   
 }
 

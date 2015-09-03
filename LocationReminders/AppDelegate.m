@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "Reminder.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  
+[Reminder registerSubclass];
   
 [Parse setApplicationId:@"IdgVvfJuoVZOZPSbtnUVRJdhHPzR0vqnqlOGN7QK"
                 clientKey:@"J6BV8X9dWirScMzLM3cPCCjGFxgCayIqjt3X4C3r"];

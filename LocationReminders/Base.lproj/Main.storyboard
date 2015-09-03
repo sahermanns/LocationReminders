@@ -84,17 +84,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Add your reminder here." translatesAutoresizingMaskIntoConstraints="NO" id="hsa-n2-NsG">
-                                <rect key="frame" x="16" y="129" width="568" height="413"/>
-                                <color key="backgroundColor" red="0.78823529410000004" green="1" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Reminder Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ft6-7R-sw7">
+                                <rect key="frame" x="16" y="118" width="568" height="30"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.98823529409999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZK-wF-je8">
-                                <rect key="frame" x="277" y="550" width="46" height="30"/>
+                                <rect key="frame" x="277" y="156" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Vwc-Mz-gWO"/>
-                                    <constraint firstAttribute="width" constant="46" id="wXc-sB-pv0"/>
+                                    <constraint firstAttribute="height" constant="30" id="Cpy-Nq-V0h"/>
+                                    <constraint firstAttribute="width" constant="46" id="D99-eS-rZB"/>
                                 </constraints>
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -103,32 +103,32 @@
                                     <action selector="addReminderButton:" destination="LCD-Ae-VcS" eventType="touchUpInside" id="ezO-rM-ohh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8nX-bb-RNF">
-                                <rect key="frame" x="242" y="89" width="117" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1q-Lp-GYI">
+                                <rect key="frame" x="145" y="80" width="311" height="30"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.98823529409999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="117" id="igm-Bj-xmM"/>
-                                    <constraint firstAttribute="height" constant="21" id="rLm-Uh-eJD"/>
+                                    <constraint firstAttribute="width" constant="311" id="lyh-ZL-W8q"/>
+                                    <constraint firstAttribute="height" constant="30" id="oAv-JM-6YI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cVL-MD-5fh" firstAttribute="top" secondItem="HZK-wF-je8" secondAttribute="bottom" constant="20" id="IBm-cK-8jw"/>
-                            <constraint firstItem="8nX-bb-RNF" firstAttribute="top" secondItem="NY4-8g-FvE" secondAttribute="bottom" constant="25" id="NN4-Ly-VDy"/>
-                            <constraint firstItem="HZK-wF-je8" firstAttribute="top" secondItem="hsa-n2-NsG" secondAttribute="bottom" constant="8" id="PrX-Xv-ctE"/>
-                            <constraint firstAttribute="centerX" secondItem="HZK-wF-je8" secondAttribute="centerX" id="UZ7-0i-LY6"/>
-                            <constraint firstItem="hsa-n2-NsG" firstAttribute="top" secondItem="8nX-bb-RNF" secondAttribute="bottom" constant="19" id="iIK-hZ-dZH"/>
-                            <constraint firstItem="hsa-n2-NsG" firstAttribute="trailing" secondItem="whR-NR-Oob" secondAttribute="trailingMargin" id="jJC-yg-qIV"/>
-                            <constraint firstAttribute="centerX" secondItem="8nX-bb-RNF" secondAttribute="centerX" id="lkP-1G-UTf"/>
-                            <constraint firstItem="hsa-n2-NsG" firstAttribute="leading" secondItem="whR-NR-Oob" secondAttribute="leadingMargin" id="wux-Fq-O9y"/>
+                            <constraint firstItem="HZK-wF-je8" firstAttribute="top" secondItem="ft6-7R-sw7" secondAttribute="bottom" constant="8" id="A4H-gb-C73"/>
+                            <constraint firstAttribute="centerX" secondItem="W1q-Lp-GYI" secondAttribute="centerX" id="Jjv-Yw-hr7"/>
+                            <constraint firstItem="ft6-7R-sw7" firstAttribute="top" secondItem="W1q-Lp-GYI" secondAttribute="bottom" constant="8" id="KeH-Kr-QfH"/>
+                            <constraint firstAttribute="centerX" secondItem="HZK-wF-je8" secondAttribute="centerX" id="Nae-PD-zma"/>
+                            <constraint firstItem="W1q-Lp-GYI" firstAttribute="top" secondItem="NY4-8g-FvE" secondAttribute="bottom" constant="16" id="X7x-C8-TOH"/>
+                            <constraint firstItem="ft6-7R-sw7" firstAttribute="leading" secondItem="whR-NR-Oob" secondAttribute="leadingMargin" id="g9y-lA-Qfl"/>
+                            <constraint firstItem="ft6-7R-sw7" firstAttribute="trailing" secondItem="whR-NR-Oob" secondAttribute="trailingMargin" id="mrW-Dm-WcN"/>
+                            <constraint firstItem="HZK-wF-je8" firstAttribute="top" secondItem="ft6-7R-sw7" secondAttribute="bottom" constant="8" id="wa1-6b-GI0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="annotationTitle" destination="8nX-bb-RNF" id="egu-JQ-Agk"/>
-                        <outlet property="reminderTextView" destination="hsa-n2-NsG" id="Ecc-xX-9x5"/>
+                        <outlet property="annotationTitle" destination="W1q-Lp-GYI" id="n84-Xr-Tbt"/>
+                        <outlet property="reminderTextField" destination="ft6-7R-sw7" id="WFj-sm-Eij"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qum-4x-Yhs" userLabel="First Responder" sceneMemberID="firstResponder"/>
