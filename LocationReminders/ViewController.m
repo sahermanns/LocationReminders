@@ -82,10 +82,12 @@
 -(void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
   
+  if (![PFUser currentUser]) {
 
   PFLogInViewController *logInController = [[PFLogInViewController alloc] init];
   logInController.delegate = self;
   [self presentViewController:logInController animated:YES completion:nil];
+  }
   
   [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(47.6235, -122.3363), 100, 100) animated:true];
 }
