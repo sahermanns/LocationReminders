@@ -13,8 +13,9 @@
 #import <Parse/Parse.h>
 #import "Reminder.h"
 #import "constants.h"
+#import <ParseUI/ParseUI.h>
 
-@interface ViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
+@interface ViewController () <CLLocationManagerDelegate, MKMapViewDelegate, PFLogInViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
@@ -26,8 +27,10 @@
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+
 - (void)viewDidLoad {
   [super viewDidLoad];
+
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reminderNotification:) name:kReminderNotification object:nil];
   
@@ -48,6 +51,8 @@
   
 
 }
+
+
 
 -(void)reminderNotification:(NSNotification *)notification {
   NSLog(@"notification fired!");
@@ -76,7 +81,22 @@
 
 -(void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
+  
+
+  PFLogInViewController *logInController = [[PFLogInViewController alloc] init];
+  logInController.delegate = self;
+  [self presentViewController:logInController animated:YES completion:nil];
+  
   [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(47.6235, -122.3363), 100, 100) animated:true];
+}
+
+- (void)logInViewController:(PFLogInViewController *)controller
+               didLogInUser:(PFUser *)user {
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)handleLongPressGesture:(UIGestureRecognizer*)sender {

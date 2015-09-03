@@ -29,6 +29,7 @@
 		3E4B8C121B97B92D007BFE57 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4B8C111B97B92D007BFE57 /* Bolts.framework */; };
 		3E4B8C151B97CCE6007BFE57 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8C141B97CCE6007BFE57 /* Reminder.m */; };
 		3E4B8C181B98BB7C007BFE57 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8C171B98BB7C007BFE57 /* constants.m */; };
+		3E4B8C241B98D019007BFE57 /* MyLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8C231B98D019007BFE57 /* MyLoginViewController.m */; };
 		3E5FFCBE1B950CB100ED0BC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FFCBD1B950CB100ED0BC4 /* main.m */; };
 		3E5FFCC11B950CB100ED0BC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FFCC01B950CB100ED0BC4 /* AppDelegate.m */; };
 		3E5FFCC41B950CB100ED0BC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FFCC31B950CB100ED0BC4 /* ViewController.m */; };
@@ -75,6 +76,8 @@
 		3E4B8C141B97CCE6007BFE57 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 		3E4B8C161B98BB7C007BFE57 /* constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		3E4B8C171B98BB7C007BFE57 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
+		3E4B8C221B98D019007BFE57 /* MyLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLoginViewController.h; sourceTree = "<group>"; };
+		3E4B8C231B98D019007BFE57 /* MyLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLoginViewController.m; sourceTree = "<group>"; };
 		3E5FFCB81B950CB100ED0BC4 /* LocationReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5FFCBC1B950CB100ED0BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E5FFCBD1B950CB100ED0BC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 		3E4B8BE31B977E9B007BFE57 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3E4B8C221B98D019007BFE57 /* MyLoginViewController.h */,
+				3E4B8C231B98D019007BFE57 /* MyLoginViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E4B8C241B98D019007BFE57 /* MyLoginViewController.m in Sources */,
 				3E5FFCC41B950CB100ED0BC4 /* ViewController.m in Sources */,
 				3E5FFCC11B950CB100ED0BC4 /* AppDelegate.m in Sources */,
 				3E5FFCBE1B950CB100ED0BC4 /* main.m in Sources */,
