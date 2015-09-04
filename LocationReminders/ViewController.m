@@ -69,6 +69,11 @@
       
       [self.locationManager startMonitoringForRegion:region];
       
+      
+      MKCircle *circle = [MKCircle circleWithCenterCoordinate:CLLocationCoordinate2DMake(reminder.coordinate.latitude, reminder.coordinate.longitude) radius:200];
+      
+      [self.mapView addOverlay:circle];
+      
 //      NSArray *regions = [[self.locationManager monitoredRegions] allObjects];
       
     }
@@ -108,7 +113,7 @@
     
     MKPointAnnotation *addDropPin = [[MKPointAnnotation alloc] init];
     addDropPin.coordinate = locationCoordidate;
-    addDropPin.title = @"Dummy";
+    addDropPin.title = @"Reminder";
     [self.mapView addAnnotation:addDropPin];
   } else {
 
@@ -116,18 +121,18 @@
   }
 }
 
-
-- (IBAction)buttonOne:(id)sender {
-  [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(47.633567, -122.346287), 1000, 1000)];
-}
-
-- (IBAction)buttonTwo:(id)sender {
-  [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(47.630681, -122.348639), 1000, 1000)];
-}
-
-- (IBAction)buttonThree:(id)sender {
-  [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(47.638050, -122.357182), 1000, 1000)];
-}
+// Buttons were part of first pice of assignment, I deleted them on the storyboard but kep their remnants 
+//- (IBAction)buttonOne:(id)sender {
+//  [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(47.633567, -122.346287), 1000, 1000)];
+//}
+//
+//- (IBAction)buttonTwo:(id)sender {
+//  [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(47.630681, -122.348639), 1000, 1000)];
+//}
+//
+//- (IBAction)buttonThree:(id)sender {
+//  [self.mapView setRegion:MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(47.638050, -122.357182), 1000, 1000)];
+//}
 
 #pragma mark - CLLocationManagerDelegate
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
@@ -166,6 +171,17 @@
   pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
   
   return pinView;
+}
+
+#pragma mark - Overlay Renderer
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay {
+  MKCircleRenderer *circleRenderer = [[MKCircleRenderer alloc] initWithOverlay:overlay];
+  
+  circleRenderer.strokeColor = [UIColor blueColor];
+  circleRenderer.fillColor = [UIColor redColor];
+  circleRenderer.alpha = 0.5;
+  
+  return circleRenderer;
 }
 
 #pragma mark - CalloutAccessoryIdentifier

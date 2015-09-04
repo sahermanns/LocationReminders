@@ -29,8 +29,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-
-  
 }
 
 
@@ -47,16 +45,25 @@
   
   [reminder saveInBackground];
   
-  PFQuery *reminderQuery = [Reminder query];
-  [reminderQuery findObjectsInBackgroundWithBlock:^(NSArray *reminders, NSError *error) {
-    
-  Reminder *firstReminder = [reminders firstObject];
-  NSLog(@"%@",firstReminder.locationName);
-  NSLog(@"%@",firstReminder.reminderText);
-    
-  }];
+//  PFQuery *reminderQuery = [Reminder query];
+//  [reminderQuery findObjectsInBackgroundWithBlock:^(NSArray *reminders, NSError *error) {
+//    
+//  Reminder *firstReminder = [reminders firstObject];
+//  NSLog(@"%@",firstReminder.locationName);
+//  NSLog(@"%@",firstReminder.reminderText);
   
+//  }];
   
+  UILocalNotification *notification = [[UILocalNotification alloc] init];
+  
+  notification.alertTitle = reminder.locationName;
+  notification.alertBody = reminder.reminderText;
+  
+  NSDate *now = [NSDate date];
+  NSDate *fireDate = [NSDate dateWithTimeInterval:15.0 sinceDate:now];
+  notification.fireDate = fireDate;
+  
+  [[UIApplication sharedApplication] scheduleLocalNotification:notification];
   
   
   NSDictionary *userInfo = [NSDictionary dictionaryWithObject:reminder forKey:@"NewReminder"];

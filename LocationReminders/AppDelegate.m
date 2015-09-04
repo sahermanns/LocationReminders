@@ -20,12 +20,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   
+  if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound) categories:nil];
+    [application registerUserNotificationSettings:settings];
+  }
+  
 [Reminder registerSubclass];
   
 [Parse setApplicationId:@"IdgVvfJuoVZOZPSbtnUVRJdhHPzR0vqnqlOGN7QK"
                 clientKey:@"J6BV8X9dWirScMzLM3cPCCjGFxgCayIqjt3X4C3r"];
   
   return YES;
+}
+
+-(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+  NSLog(@"local");
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
