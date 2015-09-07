@@ -30,12 +30,13 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-
+  
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reminderNotification:) name:kReminderNotification object:nil];
   
   self.mapView.delegate = self;
   self.mapView.showsUserLocation = true;
+  
   
   NSLog(@"%d",[CLLocationManager authorizationStatus]);
   

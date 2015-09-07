@@ -18,15 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N2p-3p-kEK">
-                                <rect key="frame" x="16" y="64" width="568" height="516"/>
+                                <rect key="frame" x="16" y="80" width="568" height="504"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.45850959829999999" green="0.90784535440000003" blue="0.79177933919999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="N2p-3p-kEK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7kn-Jk-qCr"/>
-                            <constraint firstItem="N2p-3p-kEK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="OS9-sj-tN3"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="N2p-3p-kEK" secondAttribute="bottom" constant="20" id="Svx-Cg-USS"/>
-                            <constraint firstItem="N2p-3p-kEK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cRb-h8-J5B"/>
+                            <constraint firstItem="N2p-3p-kEK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="71b-Jg-f9t"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="N2p-3p-kEK" secondAttribute="bottom" constant="16" id="DO6-Yt-5gj"/>
+                            <constraint firstItem="N2p-3p-kEK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="P4n-ye-gvM"/>
+                            <constraint firstItem="N2p-3p-kEK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="msH-HA-DoI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tuq-bN-WsI"/>
@@ -71,12 +71,8 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W1q-Lp-GYI">
-                                <rect key="frame" x="145" y="80" width="311" height="30"/>
+                                <rect key="frame" x="16" y="80" width="568" height="30"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.98823529409999999" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="311" id="lyh-ZL-W8q"/>
-                                    <constraint firstAttribute="height" constant="30" id="oAv-JM-6YI"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -90,20 +86,24 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="SZI-64-kOv">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5.5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="SZI-64-kOv">
                                 <rect key="frame" x="14" y="285" width="572" height="31"/>
+                                <connections>
+                                    <action selector="regionRadius:" destination="LCD-Ae-VcS" eventType="valueChanged" id="NH0-wv-QYu"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ft6-7R-sw7" firstAttribute="top" secondItem="W1q-Lp-GYI" secondAttribute="bottom" constant="8" id="8G5-8m-t04"/>
                             <constraint firstItem="HZK-wF-je8" firstAttribute="top" secondItem="ft6-7R-sw7" secondAttribute="bottom" constant="8" id="A4H-gb-C73"/>
+                            <constraint firstItem="W1q-Lp-GYI" firstAttribute="top" secondItem="NY4-8g-FvE" secondAttribute="bottom" constant="16" id="Dgb-6V-roo"/>
                             <constraint firstItem="WBA-dH-3TY" firstAttribute="top" secondItem="HZK-wF-je8" secondAttribute="bottom" constant="45" id="Huh-XQ-SlR"/>
-                            <constraint firstAttribute="centerX" secondItem="W1q-Lp-GYI" secondAttribute="centerX" id="Jjv-Yw-hr7"/>
-                            <constraint firstItem="ft6-7R-sw7" firstAttribute="top" secondItem="W1q-Lp-GYI" secondAttribute="bottom" constant="8" id="KeH-Kr-QfH"/>
                             <constraint firstItem="SZI-64-kOv" firstAttribute="top" secondItem="WBA-dH-3TY" secondAttribute="bottom" constant="33" id="NDp-XH-4Ob"/>
                             <constraint firstAttribute="centerX" secondItem="HZK-wF-je8" secondAttribute="centerX" id="Nae-PD-zma"/>
-                            <constraint firstItem="W1q-Lp-GYI" firstAttribute="top" secondItem="NY4-8g-FvE" secondAttribute="bottom" constant="16" id="X7x-C8-TOH"/>
+                            <constraint firstItem="W1q-Lp-GYI" firstAttribute="trailing" secondItem="whR-NR-Oob" secondAttribute="trailingMargin" id="VgV-Aa-iht"/>
                             <constraint firstItem="ft6-7R-sw7" firstAttribute="leading" secondItem="whR-NR-Oob" secondAttribute="leadingMargin" id="g9y-lA-Qfl"/>
+                            <constraint firstItem="W1q-Lp-GYI" firstAttribute="leading" secondItem="whR-NR-Oob" secondAttribute="leadingMargin" id="kRj-OW-5Gq"/>
                             <constraint firstItem="SZI-64-kOv" firstAttribute="leading" secondItem="whR-NR-Oob" secondAttribute="leadingMargin" id="mgq-jb-99H"/>
                             <constraint firstItem="ft6-7R-sw7" firstAttribute="trailing" secondItem="whR-NR-Oob" secondAttribute="trailingMargin" id="mrW-Dm-WcN"/>
                             <constraint firstAttribute="centerX" secondItem="WBA-dH-3TY" secondAttribute="centerX" id="qEn-Rd-ovA"/>
@@ -114,6 +114,7 @@
                     <connections>
                         <outlet property="annotationTitle" destination="W1q-Lp-GYI" id="n84-Xr-Tbt"/>
                         <outlet property="reminderTextField" destination="ft6-7R-sw7" id="WFj-sm-Eij"/>
+                        <outlet property="sliderPosition" destination="SZI-64-kOv" id="wQX-he-et3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qum-4x-Yhs" userLabel="First Responder" sceneMemberID="firstResponder"/>

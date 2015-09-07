@@ -16,6 +16,12 @@
 @interface AddReminderDetailViewController ()
 
 
+@property (weak, nonatomic) IBOutlet UISlider *sliderPosition;
+
+
+
+
+
 @property (weak, nonatomic) IBOutlet UITextField *annotationTitle;
 
 @property (weak, nonatomic) IBOutlet UITextField *reminderTextField;
@@ -69,6 +75,13 @@
   NSDictionary *userInfo = [NSDictionary dictionaryWithObject:reminder forKey:@"NewReminder"];
   
   [[NSNotificationCenter defaultCenter] postNotificationName:kReminderNotification object:self userInfo:userInfo];
+  
+}
+- (IBAction)regionRadius:(id)sender {
+  
+
+  
+  
   
 }
 @end

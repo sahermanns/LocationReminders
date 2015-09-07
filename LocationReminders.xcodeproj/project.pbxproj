@@ -30,6 +30,7 @@
 		3E4B8C151B97CCE6007BFE57 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8C141B97CCE6007BFE57 /* Reminder.m */; };
 		3E4B8C181B98BB7C007BFE57 /* constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8C171B98BB7C007BFE57 /* constants.m */; };
 		3E4B8C241B98D019007BFE57 /* MyLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8C231B98D019007BFE57 /* MyLoginViewController.m */; };
+		3E4B8C271B9DED8D007BFE57 /* LinkedList.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4B8C261B9DED8D007BFE57 /* LinkedList.m */; };
 		3E5FFCBE1B950CB100ED0BC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FFCBD1B950CB100ED0BC4 /* main.m */; };
 		3E5FFCC11B950CB100ED0BC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FFCC01B950CB100ED0BC4 /* AppDelegate.m */; };
 		3E5FFCC41B950CB100ED0BC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E5FFCC31B950CB100ED0BC4 /* ViewController.m */; };
@@ -78,6 +79,8 @@
 		3E4B8C171B98BB7C007BFE57 /* constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = constants.m; sourceTree = "<group>"; };
 		3E4B8C221B98D019007BFE57 /* MyLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyLoginViewController.h; sourceTree = "<group>"; };
 		3E4B8C231B98D019007BFE57 /* MyLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyLoginViewController.m; sourceTree = "<group>"; };
+		3E4B8C251B9DED8D007BFE57 /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
+		3E4B8C261B9DED8D007BFE57 /* LinkedList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedList.m; sourceTree = "<group>"; };
 		3E5FFCB81B950CB100ED0BC4 /* LocationReminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocationReminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E5FFCBC1B950CB100ED0BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E5FFCBD1B950CB100ED0BC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 		3E5FFCBB1B950CB100ED0BC4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3E4B8C251B9DED8D007BFE57 /* LinkedList.h */,
+				3E4B8C261B9DED8D007BFE57 /* LinkedList.m */,
 				3E5FFCBF1B950CB100ED0BC4 /* AppDelegate.h */,
 				3E5FFCC01B950CB100ED0BC4 /* AppDelegate.m */,
 				3E5FFCCA1B950CB100ED0BC4 /* LaunchScreen.xib */,
@@ -361,6 +366,7 @@
 			files = (
 				3E4B8C241B98D019007BFE57 /* MyLoginViewController.m in Sources */,
 				3E5FFCC41B950CB100ED0BC4 /* ViewController.m in Sources */,
+				3E4B8C271B9DED8D007BFE57 /* LinkedList.m in Sources */,
 				3E5FFCC11B950CB100ED0BC4 /* AppDelegate.m in Sources */,
 				3E5FFCBE1B950CB100ED0BC4 /* main.m in Sources */,
 				3E4B8C181B98BB7C007BFE57 /* constants.m in Sources */,
