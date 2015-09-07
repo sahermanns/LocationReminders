@@ -1,5 +1,5 @@
 //
-//  LinkedList.h
+//  Node.h
 //  LocationReminders
 //
 //  Created by Sarah Hermanns on 9/7/15.
@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LinkedList : NSObject
+@interface Node : NSObject
 
-- (void)addValue:(id)value;
+@property (strong,nonatomic) id value;
+@property (strong,nonatomic) Node *next;
 
 @end

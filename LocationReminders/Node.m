@@ -1,15 +1,13 @@
 //
-//  LinkedList.h
+//  Node.m
 //  LocationReminders
 //
 //  Created by Sarah Hermanns on 9/7/15.
 //  Copyright (c) 2015 SASH. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Node.h"
 
-@interface LinkedList : NSObject
-
-- (void)addValue:(id)value;
+@implementation Node
 
 @end

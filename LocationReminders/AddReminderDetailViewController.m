@@ -16,10 +16,8 @@
 @interface AddReminderDetailViewController ()
 
 
-@property (weak, nonatomic) IBOutlet UISlider *sliderPosition;
 
-
-
+@property (weak, nonatomic) IBOutlet UISlider *sliderValue;
 
 
 @property (weak, nonatomic) IBOutlet UITextField *annotationTitle;
@@ -79,9 +77,7 @@
 }
 - (IBAction)regionRadius:(id)sender {
   
-
-  
-  
+// @property (strong, nonatomic) NSNumber *radius =
   
 }
 @end

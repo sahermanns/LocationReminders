@@ -7,18 +7,34 @@
 //
 
 #import "LinkedList.h"
+#import "Node.h"
+
+@interface LinkedList()
+
+@property (strong, nonatomic) Node *head;
+
+
+@end
 
 @implementation LinkedList
 
-//@property (strong, nonatomic) NSObject *head;
-//
-//- (void) addValue {
-//  
-//  if self.head == nil {
-//    
-//  }
-//  
-//}
+-(void)addValue: (id)value {
+  
+  Node *newNode = [[Node alloc] init];
+  newNode.value = value;
+  
+  if (!self.head) {
+    self.head = newNode;
+    return;
+  } else {
+    Node *currentNode = self.head;
+    
+    while (currentNode.next) {
+      currentNode = currentNode.next;
+    }
+    currentNode.next = newNode;
+  }
+}
 
 
 
