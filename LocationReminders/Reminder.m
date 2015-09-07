@@ -17,6 +17,7 @@
 @dynamic locationName;
 @dynamic reminderText;
 @dynamic coordinate;
+@dynamic radius;
 
 + (NSString * __nonnull)parseClassName {
   return @"Reminder";

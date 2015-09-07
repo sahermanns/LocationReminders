@@ -16,9 +16,10 @@
 @interface AddReminderDetailViewController ()
 
 
+@property (weak, nonatomic) IBOutlet UISlider *slider;
 
-@property (weak, nonatomic) IBOutlet UISlider *sliderValue;
 
+@property(nonatomic) float value;
 
 @property (weak, nonatomic) IBOutlet UITextField *annotationTitle;
 
@@ -42,6 +43,7 @@
   Reminder *reminder = [Reminder object];
   reminder.locationName = self.annotationTitle.text;
   reminder.reminderText = self.reminderTextField.text;
+  reminder.radius = self.slider.value;
   
   PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:self.annotationCoordinates.latitude longitude: self.annotationCoordinates.longitude];
   

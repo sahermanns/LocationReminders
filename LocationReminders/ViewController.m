@@ -66,12 +66,12 @@
       
       CLLocationCoordinate2D location = CLLocationCoordinate2DMake(reminder.coordinate.latitude, reminder.coordinate.longitude);
       
-      CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:location radius:200 identifier:reminder.locationName];
+      CLCircularRegion *region = [[CLCircularRegion alloc] initWithCenter:location radius:reminder.radius identifier:reminder.locationName];
       
       [self.locationManager startMonitoringForRegion:region];
       
       
-      MKCircle *circle = [MKCircle circleWithCenterCoordinate:CLLocationCoordinate2DMake(reminder.coordinate.latitude, reminder.coordinate.longitude) radius:200];
+      MKCircle *circle = [MKCircle circleWithCenterCoordinate:CLLocationCoordinate2DMake(reminder.coordinate.latitude, reminder.coordinate.longitude) radius:reminder.radius];
       
       [self.mapView addOverlay:circle];
       

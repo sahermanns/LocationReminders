@@ -86,11 +86,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5.5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="SZI-64-kOv">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="505" minValue="10" maxValue="1000" translatesAutoresizingMaskIntoConstraints="NO" id="SZI-64-kOv">
                                 <rect key="frame" x="14" y="285" width="572" height="31"/>
-                                <connections>
-                                    <action selector="regionRadius:" destination="LCD-Ae-VcS" eventType="valueChanged" id="NH0-wv-QYu"/>
-                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,8 +111,7 @@
                     <connections>
                         <outlet property="annotationTitle" destination="W1q-Lp-GYI" id="n84-Xr-Tbt"/>
                         <outlet property="reminderTextField" destination="ft6-7R-sw7" id="WFj-sm-Eij"/>
-                        <outlet property="sliderPosition" destination="SZI-64-kOv" id="wQX-he-et3"/>
-                        <outlet property="sliderValue" destination="SZI-64-kOv" id="0vG-ao-ydV"/>
+                        <outlet property="slider" destination="SZI-64-kOv" id="aGN-Fk-7xx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qum-4x-Yhs" userLabel="First Responder" sceneMemberID="firstResponder"/>

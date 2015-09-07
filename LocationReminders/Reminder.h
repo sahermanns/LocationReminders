@@ -14,6 +14,8 @@
 @property (strong, nonatomic) NSString *locationName;
 @property (strong, nonatomic) NSString *reminderText;
 @property (nonatomic) PFGeoPoint *coordinate;
+@property (nonatomic) double radius;
+
 
 
 @end
